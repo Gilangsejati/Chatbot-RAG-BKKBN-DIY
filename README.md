@@ -51,7 +51,8 @@ Tahap terakhir adalah melakukan pengujian sistem untuk memastikan chatbot dapat 
 
 ## Tampilan Chatbot
 
-![Chatbot Interface](images/chatbot_interface.png](https://github.com/Gilangsejati/Chatbot-RAG-BKKBN-DIY/blob/main/Chatbot_Kemendukbangga/images/tampilan_chatbot.png)
+![Chatbot Interface](https://github.com/Gilangsejati/Chatbot-RAG-BKKBN-DIY/blob/main/Chatbot_Kemendukbangga/images/tampilan_chatbot.png)
+
 
 Gambar di atas menunjukkan contoh tampilan chatbot yang digunakan untuk berinteraksi dengan pengguna. Pengguna dapat mengajukan pertanyaan terkait informasi BKKBN dan sistem akan memberikan jawaban berdasarkan data FAQ yang tersedia.
 
