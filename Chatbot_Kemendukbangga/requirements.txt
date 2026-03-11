@@ -1,0 +1,14 @@
+pandas
+numpy
+sentence-transformers
+faiss-cpu
+scikit-learn
+rapidfuzz
+whisper
+soundfile
+pydub
+flask
+gunicorn
+uvicorn
+python-dotenv
+google-generativeai

@@ -1,0 +1,348 @@
+/* static/style.css (revised final) */
+/* ======================== COLOR TOKENS ======================== */
+:root{
+  --bg-page: #f5f7fb;
+  --panel-bg: #fbfdff;
+  --border: #e9eef3;
+  --muted-border: #e6eef7;
+  --pill-border: #e2e8f0;
+  --primary: #0f7be6;
+  --accent: #06a6f6;
+  --user-bubble: #dbeafe;
+  --bot-bubble: #eef6fb;
+  --composer-border: #eef4f8;
+  --input-border: #d1d5db;
+  --text: #0f1724;
+  --muted-text: #6b7280;
+  --white: #ffffff;
+  --card-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  --online-green: #22c55e;
+}
+
+/* base */
+/* Use system UI for general text; title uses Poppins (if available) */
+*{ box-sizing:border-box; font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+html,body{ height:100%; margin:0; background:var(--bg-page); color:var(--text); }
+
+/* ======================== APP CONTAINER ======================== */
+#app{
+  display:flex;
+  height:100vh;
+  max-width:1280px;
+  margin:20px auto;
+  background:var(--white);
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow:var(--card-shadow);
+}
+
+/* ======================== SIDEBAR ======================== */
+#sidebar{
+  width:320px;
+  min-width:260px;
+  border-right:1px solid var(--border);
+  padding:22px;
+  background:var(--panel-bg);
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+/* sidebar title */
+#sidebar h2{
+  margin:0 0 6px;
+  font-size:20px;
+  font-weight:700;
+}
+
+/* ---------- CATEGORY SCROLL WRAPPER ---------- */
+/* this area scrolls; admin button is placed below and does NOT scroll */
+.pills-scroll{
+  max-height: calc(100vh - 220px); /* leave space for fixed admin button area below */
+  overflow-y:auto;
+  padding-right:6px;
+}
+.pills-scroll::-webkit-scrollbar{ width:10px; }
+.pills-scroll::-webkit-scrollbar-thumb{
+  background: linear-gradient(180deg,#e6eef7,#f1f6fb);
+  border-radius:8px;
+}
+
+/* ---------- CATEGORY PILLS ---------- */
+.pills-container{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.pill{
+  padding:8px 13px;
+  border-radius:999px;
+  border:1px solid var(--pill-border);
+  background:var(--white);
+  cursor:pointer;
+  font-weight:600;
+  color:var(--text);
+  transition:all .18s ease;
+}
+.pill:hover{
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(0,0,0,0.05);
+}
+.pill.active{
+  background:linear-gradient(180deg,var(--primary),var(--accent));
+  color:#fff;
+  border-color:transparent;
+  box-shadow:0 6px 16px rgba(6,166,246,0.2);
+}
+
+/* persistent (non-scrolling) Admin widget placed below pills */
+#admin-contact-widget{
+  margin-top:12px;
+  padding-top:10px;
+  border-top:1px solid var(--border);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:64px;
+}
+#admin-contact-widget a{
+  display:inline-block;
+  padding:12px 18px;
+  border-radius:12px;
+  text-decoration:none;
+  font-weight:800;
+  color:#fff;
+  background:linear-gradient(180deg,var(--primary),var(--accent));
+  box-shadow:0 6px 18px rgba(6,166,246,0.18);
+  font-size:16px;
+}
+
+/* OPTIONAL: hide any inline admin link accidentally injected into pills area
+   (If your JS inserts an inline admin link inside the pills container, this will hide it.) */
+.pills-container a,
+.pills-container a.pill {
+  display: none !important;
+}
+
+/* ======================== CHAT PANEL ======================== */
+#chat-panel{ flex:1; display:flex; flex-direction:column; }
+
+#chat-panel header{
+  padding:20px 28px;
+  border-bottom:1px solid var(--composer-border);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+/* site title: blue + Poppins (if available) */
+#chat-panel header h1{ margin:0; font-size:32px; line-height:1; }
+.site-title{
+  color: var(--primary);
+  font-weight:800;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  letter-spacing:-0.4px;
+}
+
+/* subtitle */
+.subtitle{ margin-top:4px; font-size:13px; color:var(--muted-text); }
+
+/* health indicator: small green dot + text "online" */
+#status { font-size:14px; color:var(--muted-text); display:flex; align-items:center; gap:10px; }
+#health{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  color:var(--muted-text);
+  font-weight:600;
+  text-transform:lowercase;
+}
+
+/* green dot before the word */
+#health::before{
+  content: "";
+  display:inline-block;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--online-green);
+  box-shadow:0 0 0 4px rgba(34,197,94,0.08);
+}
+
+/* ======================== MESSAGES ======================== */
+.messages{
+  flex:1;
+  padding:26px;
+  overflow-y:auto;
+  background:linear-gradient(180deg,#fff,#f5f8fb);
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+/* wrapper for message + timestamp */
+.msgwrap{
+  display:flex;
+  flex-direction:column;
+  gap:6px;
+  max-width:78%;
+  word-break:break-word;
+}
+
+/* individual bubble */
+.msg{
+  padding:12px 14px;
+  border-radius:12px;
+  white-space:pre-wrap;
+  line-height:1.5;
+  box-shadow:0 2px 8px rgba(0,0,0,0.03);
+}
+
+/* bubbles: bot/user */
+.msg.bot{
+  align-self:flex-start;
+  background:var(--bot-bubble);
+  border:1px solid rgba(14,74,110,0.02);
+  max-width:78%;
+}
+.msg.user{
+  align-self:flex-end;
+  background:var(--user-bubble);
+  border:1px solid rgba(3,102,214,0.06);
+  max-width:78%;
+}
+
+/* timestamp under each message */
+.msg-time,
+.msg-ts{
+  font-size:12px;
+  color:var(--muted-text);
+  opacity:0.9;
+  margin-top:8px;
+}
+
+/* alignment tweaks */
+.msgwrap .msg.user + .msg-time { align-self:flex-end; }
+.msgwrap .msg.bot + .msg-time  { align-self:flex-start; }
+
+/* suggestion bubble */
+.suggestion-bubble{
+  align-self:flex-start;
+  background:#f8faff;
+  border:1px solid #e2e8f0;
+  padding:16px;
+  border-radius:12px;
+  box-shadow:0 3px 12px rgba(0,0,0,0.03);
+}
+.suggest-header{
+  font-weight:700;
+  margin-bottom:8px;
+}
+.suggest-list{
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+.suggest-btn{
+  padding:10px 12px;
+  background:white;
+  border:1px solid #e2e8f0;
+  border-radius:10px;
+  font-weight:600;
+  cursor:pointer;
+  text-align:left;
+}
+.suggest-btn:hover{
+  background:#f3f9ff;
+  transform:translateY(-2px);
+}
+
+/* ======================== TYPING INDICATOR ======================== */
+.msg.bot.typing-indicator {
+  align-self:flex-start;
+  background:var(--bot-bubble);
+  border:1px solid rgba(14,74,110,0.02);
+  width:auto;
+  padding:10px 12px;
+  display:flex;
+  gap:8px;
+  border-radius:12px;
+  align-items:center;
+}
+.msg.bot.typing-indicator .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:#9bb8d1;
+  opacity:0.25;
+  transform:translateY(0);
+  animation: dot-bounce 1s infinite ease-in-out;
+}
+.msg.bot.typing-indicator .dot:nth-child(2){ animation-delay: .12s; }
+.msg.bot.typing-indicator .dot:nth-child(3){ animation-delay: .24s; }
+
+@keyframes dot-bounce{
+  0%{ transform:translateY(0); opacity:0.25; }
+  50%{ transform:translateY(-6px); opacity:1; }
+  100%{ transform:translateY(0); opacity:0.25; }
+}
+
+/* ======================== COMPOSER ======================== */
+#composer{
+  padding:18px 22px;
+  border-top:1px solid var(--composer-border);
+  background:var(--white);
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+
+#inputText{
+  flex:1;
+  border:1px solid var(--input-border);
+  border-radius:999px;
+  padding:14px 16px;
+  font-size:15px;
+  outline:none;
+}
+
+/* send button */
+.btn-circle{
+  width:46px;
+  height:46px;
+  border-radius:999px;
+  border:none;
+  cursor:pointer;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0;
+}
+
+.btn-send{
+  background:linear-gradient(180deg,var(--primary),var(--accent));
+  color:white;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  box-shadow:0 8px 20px rgba(6,166,246,0.12);
+}
+
+/* send icon inside button (make sure static/send.svg exists) */
+.btn-send img,
+.send-icon{
+  width:20px;
+  height:20px;
+  display:block;
+  filter: none;
+}
+
+/* hide microphone button if present in DOM (we removed it from HTML earlier) */
+#recordBtn, .btn-mic { display:none !important; }
+
+/* ============ RESPONSIVE ============ */
+@media(max-width:1000px){
+  #app{ max-width:100%; margin:0; border-radius:0; }
+  #sidebar{ width:100%; min-width:unset; border-right:none; border-bottom:1px solid var(--border); }
+  #admin-contact-widget{ margin-bottom:12px; }
+}
