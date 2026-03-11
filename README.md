@@ -8,18 +8,10 @@ Tujuan dari pengembangan chatbot ini adalah untuk memberikan gambaran mengenai p
 
 ---
 
-## Tujuan Proyek
-- Mengembangkan chatbot informasi berbasis **AI** menggunakan metode **Retrieval Augmented Generation (RAG)**.
-- Memanfaatkan **dataset FAQ BKKBN** sebagai sumber pengetahuan chatbot.
-- Membantu memberikan gambaran solusi digital dalam penyediaan layanan informasi secara otomatis.
-
----
-
 ## Teknologi yang Digunakan
 Beberapa teknologi yang digunakan dalam proyek ini antara lain:
 
 - **Python**
-- **LangChain**
 - **Embedding Model**
 - **Vector Database (FAISS / ChromaDB)**
 - **Large Language Model (LLM)**
@@ -29,7 +21,7 @@ Beberapa teknologi yang digunakan dalam proyek ini antara lain:
 
 ## Alur Pengembangan Sistem
 
-![Alur Sistem Chatbot](images/alur_chatbot.png)
+![Alur Sistem Chatbot](https://github.com/Gilangsejati/Chatbot-RAG-BKKBN-DIY/blob/main/Chatbot_Kemendukbangga/images/alur.png)
 
 Gambar di atas menunjukkan tahapan pengembangan chatbot berbasis RAG yang dilakukan dalam proyek ini.
 
