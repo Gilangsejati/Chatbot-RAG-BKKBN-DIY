@@ -2,9 +2,9 @@
 # Chatbot FAQ BKKBN DIY Berbasis Retrieval Augmented Generation (RAG)
 
 ## Deskripsi Proyek
-Proyek ini merupakan pengembangan **prototype chatbot berbasis Retrieval Augmented Generation (RAG)** yang dibuat selama kegiatan magang di **BKKBN Daerah Istimewa Yogyakarta (DIY)**. Chatbot ini memanfaatkan **dataset Frequently Asked Questions (FAQ) BKKBN** sebagai sumber pengetahuan untuk menjawab pertanyaan pengguna secara otomatis.
+Proyek ini merupakan pengembangan prototype chatbot berbasis Retrieval Augmented Generation (RAG) yang dibuat selama kegiatan magang di **BKKBN Daerah Istimewa Yogyakarta (DIY)**. Chatbot ini memanfaatkan dataset Frequently Asked Questions (FAQ) BKKBN sebagai sumber pengetahuan untuk menjawab pertanyaan pengguna secara otomatis.
 
-Tujuan dari pengembangan chatbot ini adalah untuk memberikan gambaran mengenai pemanfaatan teknologi **Artificial Intelligence dan Large Language Model (LLM)** dalam meningkatkan layanan informasi digital. Sistem ini masih bersifat **prototype** dan belum digunakan secara resmi oleh BKKBN, namun diharapkan dapat menjadi **referensi untuk pengembangan sistem chatbot di masa mendatang**.
+Tujuan dari pengembangan chatbot ini adalah untuk memberikan gambaran mengenai pemanfaatan teknologi **Artificial Intelligence dan Large Language Model (LLM)** dalam meningkatkan layanan informasi digital. Sistem ini masih bersifat prototype dan belum digunakan secara resmi oleh BKKBN, namun diharapkan dapat menjadi referensi untuk pengembangan sistem chatbot di masa mendatang.
 
 ---
 
@@ -22,8 +22,6 @@ Beberapa teknologi yang digunakan dalam proyek ini antara lain:
 ## Alur Pengembangan Sistem
 
 ![Alur Sistem Chatbot](https://github.com/Gilangsejati/Chatbot-RAG-BKKBN-DIY/blob/main/Chatbot_Kemendukbangga/images/alur.png)
-
-Gambar di atas menunjukkan tahapan pengembangan chatbot berbasis RAG yang dilakukan dalam proyek ini.
 
 ### 1. Dataset FAQ
 Tahap awal dilakukan dengan mengumpulkan dataset berupa **Frequently Asked Questions (FAQ)** yang berkaitan dengan informasi BKKBN. Dataset ini digunakan sebagai sumber pengetahuan utama bagi chatbot.
@@ -53,7 +51,7 @@ Tahap terakhir adalah melakukan pengujian sistem untuk memastikan chatbot dapat 
 
 ## Tampilan Chatbot
 
-![Chatbot Interface](images/chatbot_interface.png)
+![Chatbot Interface]([images/chatbot_interface.png](https://github.com/Gilangsejati/Chatbot-RAG-BKKBN-DIY/blob/main/Chatbot_Kemendukbangga/images/tampilan_chatbot.png))
 
 Gambar di atas menunjukkan contoh tampilan chatbot yang digunakan untuk berinteraksi dengan pengguna. Pengguna dapat mengajukan pertanyaan terkait informasi BKKBN dan sistem akan memberikan jawaban berdasarkan data FAQ yang tersedia.
 
@@ -67,5 +65,5 @@ Proyek ini merupakan **prototype yang dikembangkan selama program magang** dan b
 ## Author
 
 **Gilang Sejati**  
-Mahasiswa Informatika  
+Mahasiswa Informatika Amikom Yogyakarta
 Program Magang – BKKBN DIY
